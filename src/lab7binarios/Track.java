@@ -35,17 +35,17 @@ public class Track implements Serializable {
         this.id = id;
     }
     
-    public String getnombre() { 
+    public String getNombre() { 
         return nombre;
     }
-    public void setnombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
     
-    public String getartista() { 
+    public String getArtista() { 
         return artista;
     }
-    public void setartista(String artista) {
+    public void setArtista(String artista) {
         this.artista = artista;
     }
     
@@ -56,10 +56,10 @@ public class Track implements Serializable {
         this.genre = genre;
     }
     
-    public double getduracion() {
+    public double getDuracion() {
         return duracion;
     }
-    public void setduracion(double duracion) {
+    public void setDuracion(double duracion) {
         this.duracion = duracion;
     }
     
@@ -70,27 +70,27 @@ public class Track implements Serializable {
         this.filePath = filePath;
     }
     
-    public byte[] getalbumArt() {
+    public byte[] getAlbumArt() {
         return albumArt;
     }
-    public void setalbumArt(byte[] albumArt) {
+    public void setAlbumArt(byte[] albumArt) {
         this.albumArt = albumArt;
     }
     
-    public String getalbumType() {
+    public String getAlbumType() {
         return albumType;
     }
-    public void setalbumType(String albumType) {
+    public void setAlbumType(String albumType) {
         this.albumType = albumType;
     }
     
-    public String getduracionFormatted() {
+    public String getDuracionFormatted() {
         int total = (int) duracion;
         return String.format("%d:%02d", total / 60, total % 60);
     }
     
     @Override
     public String toString() {
-        return nombre + " — " + artista + " (" + getduracionFormatted() + ")";
+        return nombre + " — " + artista + " (" + getDuracionFormatted() + ")";
     }
 }

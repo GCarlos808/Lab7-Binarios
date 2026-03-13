@@ -20,8 +20,12 @@ public class AudioPlayer {
     
     private Thread progressThread;
     
-    public void setProgressCallback(Consumer<Double> cb) { this.progressCallback = cb; }
-    public void setOnEndCallback(Runnable cb)             { this.onEndCallback = cb;   }
+    public void setProgressCallback(Consumer<Double> cb){
+        this.progressCallback = cb;
+    }
+    public void setOnEndCallback(Runnable cb){
+        this.onEndCallback = cb;
+    }
     
     public synchronized void play(Track track) {
         if (track == null) return;
@@ -39,7 +43,7 @@ public class AudioPlayer {
         try {
             File audioFile = new File(track.getFilePath());
             if (!audioFile.exists()) {
-                System.err.println("[Player] File not found: " + track.getFilePath());
+                System.err.println("[Player] Archivo no encontrado: " + track.getFilePath());
                 return;
             }
             AudioInputStream ais = AudioSystem.getAudioInputStream(audioFile);
@@ -74,7 +78,7 @@ public class AudioPlayer {
             startProgressThread();
             
         } catch (Exception e) {
-            System.err.println("[Player] Playback error: " + e.getMessage());
+            System.err.println("[Player] Error de Playback: " + e.getMessage());
             e.printStackTrace();
         }
     }
